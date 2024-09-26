@@ -25,4 +25,8 @@ jobs:
           args: release --clean
         env:
           CGO_ENABLED: 0
-          GITHUB_TOKEN: ${{ secrets.RELEASE_GH_TOKEN }}
+          
+      - name: Upload artifact
+        uses: actions/upload-artifact@v3
+        with:
+          path: ./dist
